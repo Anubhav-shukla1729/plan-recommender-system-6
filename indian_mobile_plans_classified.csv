@@ -1,0 +1,21 @@
+operator,price,validity_days,data_per_day,voice_calls,sms,price_per_day,price_per_GB,category,plan_class,within_cost
+Jio,239,28,1.5,True,100,8.54,5.69,Short-term,Calls + Data,True
+Airtel,299,28,2.0,True,100,10.68,5.34,Short-term,Heavy Data,True
+Vi,179,28,0,True,0,6.39,0,Short-term,Only Calls,True
+BSNL,399,84,1.5,True,100,4.75,3.17,Long-term,Calls + Data,True
+Jio,199,23,0.5,False,50,8.65,10.80,Short-term,SMS Only,True
+Airtel,699,56,3.0,True,100,12.48,4.15,Medium-term,Heavy Data,True
+Vi,249,28,1.5,True,100,8.89,5.93,Short-term,Calls + Data,True
+BSNL,599,90,2.0,True,100,6.65,3.33,Long-term,Heavy Data,True
+Jio,155,28,0,True,0,5.54,0,Short-term,Only Calls,True
+Airtel,839,84,2.0,True,100,9.99,4.99,Long-term,Calls + Data,True
+Vi,99,18,0,True,0,5.5,0,Short-term,Only Calls,True
+BSNL,151,28,0.25,False,100,5.39,21.57,Short-term,SMS Only,True
+Jio,999,84,3.0,True,100,11.89,3.96,Long-term,Heavy Data,True
+Airtel,499,56,2.5,True,100,8.91,3.56,Medium-term,Heavy Data,True
+Vi,269,28,1.5,True,100,9.61,6.41,Short-term,Calls + Data,True
+BSNL,199,30,1.0,True,100,6.63,6.63,Short-term,Calls + Data,True
+Jio,1199,90,3.5,True,100,13.32,3.80,Long-term,Heavy Data,True
+Airtel,129,24,0,True,0,5.37,0,Short-term,Only Calls,True
+Vi,149,20,0.2,False,100,7.45,37.25,Short-term,SMS Only,True
+BSNL,499,90,1.5,True,100,5.54,3.69,Long-term,Calls + Data,True

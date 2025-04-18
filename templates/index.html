@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>📱 Mobile Plan Recommender</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>📱 Mobile Plan Predictor</h1>
+    <form method="POST">
+      <label>Expected Price (₹):</label>
+      <input type="number" name="price" step="0.1" placeholder="e.g. 299" />
+
+      <label>Validity (Days):</label>
+      <input type="number" name="validity" step="1" placeholder="e.g. 28" />
+
+      <label>Data per Day (GB):</label>
+      <input type="number" name="data" step="0.1" placeholder="e.g. 1.5" />
+
+      <label>Optional Category:</label>
+      <select name="category">
+        <option value="">-- None --</option>
+        <option value="Only Calls">Only Calls</option>
+        <option value="Calls + Data">Calls + Data</option>
+        <option value="Heavy Data">Heavy Data</option>
+        <option value="Long Term">Long Term</option>
+        <option value="Short Term">Short Term</option>
+        <option value="SMS Only">SMS Only</option>
+      </select>
+
+      <button type="submit">🔍 Recommend Best Plans</button>
+    </form>
+
+    <div class="message">{{ message }}</div>
+
+    {% if plans %}
+    <div class="plans">
+      <h2>📋 Recommended Plans</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Operator</th>
+            <th>Price (₹)</th>
+            <th>Validity</th>
+            <th>Data/Day</th>
+            <th>Calls</th>
+            <th>SMS</th>
+            <th>Class</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for plan in plans %}
+          <tr>
+            <td>{{ plan.operator }}</td>
+            <td>{{ plan.price }}</td>
+            <td>{{ plan.validity_days }}</td>
+            <td>{{ plan.data_per_day }}</td>
+            <td>{{ "Yes" if plan.voice_calls else "No" }}</td>
+            <td>{{ plan.sms or 0 }}</td>
+            <td>{{ plan.plan_class }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% endif %}
+  </div>
+</body>
+</html>
