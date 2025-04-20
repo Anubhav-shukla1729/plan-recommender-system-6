@@ -31,6 +31,8 @@ best_isp = max(isp_speeds, key=lambda k: isp_speeds[k]['download'])
 def home():
     return render_template("index.html")
 
+
+
 @app.route('/speedtest', methods=['GET', 'POST'])
 def speedtest_view():
     message = ""
@@ -41,21 +43,39 @@ def speedtest_view():
         selected_isp = request.form.get('isp')
         pincode = request.form.get('pincode')
 
-        if selected_isp in isp_speeds:
-            # Get the speed for the selected ISP
-            selected_speed = isp_speeds[selected_isp]
+# Inside speedtest_view function
+    if selected_isp in isp_speeds:
+        selected_speed = isp_speeds[selected_isp]
 
-            # Compare with the best ISP
-            if selected_isp == best_isp:
-                message = f"Congratulations! Your ISP, {selected_isp}, is the best in your area with {selected_speed['download']} Mbps download speed."
-            else:
-                message = f"Your ISP, {selected_isp}, has {selected_speed['download']} Mbps download speed. " \
-                          f"However, the best ISP is {best_isp} with {best_isp_speed['download']} Mbps download speed. Consider switching to {best_isp} for faster speeds."
+    # Compare with the best ISP
+        if selected_isp == best_isp:
+            message = f"Congratulations! Your ISP, {selected_isp}, is the best in your area with {selected_speed['download']} Mbps download speed."
         else:
-            message = "Invalid ISP selection. Please choose a valid ISP."
+            message = f"Your ISP, {selected_isp}, has {selected_speed['download']} Mbps download speed. " \
+                      f"However, the best ISP is {best_isp} with {best_isp_speed['download']} Mbps download speed. " \
+                      f"Consider switching to {best_isp} for faster speeds."
+    else:
+        message = "Invalid ISP selection. Please choose a valid ISP."
+
 
     return render_template("speed.html", message=message, best_isp=best_isp, best_isp_speed=best_isp_speed, isp_speeds=isp_speeds)
 
+
+
+
+def fetch_isp_speed_based_on_pincode(isp, pincode):
+    # Replace this with actual speed data fetching logic based on the pincode.
+    # Here, it is just a mock.
+    if isp == 'Airtel':
+        return {'download': 25, 'upload': 10}
+    elif isp == 'Jio':
+        return {'download': 20, 'upload': 8}
+    elif isp == 'BSNL':
+        return {'download': 15, 'upload': 5}
+    elif isp == 'Vodafone':
+        return {'download': 18, 'upload': 6}
+    else:
+        return {'download': 0, 'upload': 0}  # Default case if ISP is not recognized
 
 
 

@@ -19,3 +19,11 @@ Jio,1199,90,3.5,True,100,13.32,3.80,Long-term,Heavy Data,True
 Airtel,129,24,0,True,0,5.37,0,Short-term,Only Calls,True
 Vi,149,20,0.2,False,100,7.45,37.25,Short-term,SMS Only,True
 BSNL,499,90,1.5,True,100,5.54,3.69,Long-term,Calls + Data,True
+Jio,299,28,1.5,True,100,10.68,5.69,Short-term,Calls + Data,True
+Jio,319,30,2.0,True,100,10.63,5.32,Short-term,Calls + Data,True
+Airtel,449,28,3.0,True,100,16.04,5.35,Short-term,Heavy Data,True
+Airtel,979,84,2.0,True,100,11.65,5.83,Long-term,Calls + Data,True
+Vi,349,28,1.5,True,100,12.46,8.30,Short-term,Calls + Data,True
+Vi,859,84,1.5,True,100,10.23,6.82,Long-term,Calls + Data,True
+BSNL,485,82,1.5,True,100,5.91,3.94,Long-term,Calls + Data,True
+BSNL,599,84,3.0,True,100,7.13,2.38,Long-term,Heavy Data,True
