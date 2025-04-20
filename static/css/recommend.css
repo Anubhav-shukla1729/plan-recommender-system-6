@@ -1,0 +1,185 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+/* Container for the whole recommendation page */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+/* Flex container for top half layout */
+.top-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+/* Form Containers */
+.recommend-form-container,
+.isp-form-container {
+    flex: 1;
+    min-width: 300px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Form Styles */
+.recommend-form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.recommend-form .form-group {
+    margin-bottom: 15px;
+}
+
+.recommend-form .form-group label {
+    font-size: 16px;
+    color: #333;
+}
+
+.recommend-form .form-group input,
+.recommend-form .form-group select {
+    padding: 8px;
+    font-size: 14px;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.recommend-form button,
+.recommend-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.recommend-form button:hover,
+.recommend-btn:hover {
+    background-color: #45a049;
+}
+
+/* ISP and Location Block */
+.isp-location-block {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.isp-location-block > div {
+    margin-left: 20px;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 300px;
+}
+
+.isp-location-block h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+.isp-location-block p {
+    font-size: 14px;
+    color: #555;
+}
+
+.isp-message {
+    margin-top: 15px;
+    background-color: #f0f8ff;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Message and Plan Display */
+.message,
+.result-message {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Plan Cards Section */
+.plans-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.plan-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    width: 30%;
+    min-width: 250px;
+    max-width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.plan-card:hover {
+    transform: scale(1.02);
+    border-color: #4CAF50;
+}
+
+.plan-card h4 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.plan-card p {
+    font-size: 14px;
+    color: #555;
+    margin: 4px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .top-section {
+        flex-direction: column;
+    }
+
+    .isp-location-block {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .isp-location-block > div {
+        width: 100%;
+        margin-left: 0;
+        margin-bottom: 15px;
+    }
+
+    .plans-container {
+        flex-direction: column;
+    }
+
+    .plan-card {
+        width: 100%;
+    }
+}

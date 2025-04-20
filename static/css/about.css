@@ -1,0 +1,49 @@
+/* General Styling for About Page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    padding-top: 20px;
+}
+
+.container {
+    margin-left: 50px;   /* Increased left margin for more space */
+    margin-right: 50px;  /* Optional: Balance the right margin */
+    max-width: 1200px;   /* Optional: Limit the container width */
+}
+
+h1, h3 {
+    color: #1d4ed8;  /* Primary color for headings */
+}
+
+h3 {
+    margin-top: 40px; /* Space above the h3 headers */
+}
+
+ul {
+    list-style-type: square;
+    margin-left: 20px; /* Slight indentation for the list */
+}
+
+ul li {
+    margin-bottom: 10px; /* Space between list items */
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+footer a {
+    color: #1d4ed8;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

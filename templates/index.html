@@ -1,29 +1,47 @@
 {% extends "base.html" %}
 
+{% block page_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+{% endblock %}
+
 {% block content %}
-<div class="home-container">
-  <h1 class="main-title">Telecom Plan Recommender</h1>
-  <p class="lead">Find the best mobile plan tailored to your budget, data needs, and preferences.</p>
+<div class="home-container text-center">
+    <h1 class="main-title text-primary">Welcome to the Telecom Plan Recommender</h1>
+    <p class="lead">Find the best mobile plan tailored to your needs.</p>
 
-  <a href="{{ url_for('recommend') }}" class="recommend-btn">Get Recommendations</a>
+    <!-- Interactive Elements -->
+    <div class="features">
+        <div class="feature-box">
+            <h4>🔍 Plan Recommendations</h4>
+            <p>Get the best plans based on your price, data, and validity preferences.</p>
+        </div>
+        <div class="feature-box">
+            <h4>📶 Network Speed Check</h4>
+            <p>Test your internet speed and get recommendations on the best ISPs for you.</p>
+        </div>
+        <div class="feature-box">
+            <h4>📊 Machine Learning Predictions</h4>
+            <p>Leverage AI to predict and recommend the most suitable telecom plans for you.</p>
+        </div>
+    </div>
 
-  <div class="info-section">
-    <h2>Why Use This Tool?</h2>
-    <ul>
-      <li>🎯 Accurate plan suggestions using machine learning</li>
-      <li>📈 Filters for price, validity, and data per day</li>
-      <li>📦 Categorized plans for easier comparison</li>
-      <li>⚡ Fast, responsive, and simple interface</li>
-    </ul>
-  </div>
+    <!-- Call-to-action -->
+    <a class="btn btn-primary" href="{{ url_for('recommend') }}">Get Started</a>
 
-  <div class="info-section">
-    <h2>How It Works</h2>
-    <p>Our XGBoost-based model predicts your ideal plan category based on your inputs, and shows the top available plans sorted by value (like price per GB).</p>
-  </div>
+    <!-- Fun Fact / Testimonial Section -->
+    <div class="testimonial mt-5">
+        <p><em>"This app saved me hours of searching! I now have the best plan for my usage, and I know my internet is fast enough!"</em></p>
+        <p><strong>- Happy User</strong></p>
+    </div>
 
-  <p class="about-link">
-    <a href="{{ url_for('about') }}" class="btn-link">Learn more about the project →</a>
-  </p>
+    <!-- Information on the App -->
+    <div class="app-info mt-5">
+        <h3>Why Choose Our App?</h3>
+        <p>
+            The Telecom Plan Recommender simplifies the process of selecting the perfect telecom plan for your budget and usage needs. 
+            Whether you care about price, data, or validity, we've got you covered with machine learning-driven suggestions.
+        </p>
+    </div>
 </div>
+
 {% endblock %}

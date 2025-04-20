@@ -2,11 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Telecom Plan Recommender</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Common Base Styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+
+    <!-- Page-specific CSS -->
+    {% block page_css %}
+    {% endblock %}
 </head>
 <body>
-
     <nav>
         <ul>
             <li><a href="{{ url_for('home') }}">Home</a></li>
@@ -16,8 +21,8 @@
     </nav>
 
     <div class="content">
-        {% block content %}{% endblock %}
+        {% block content %}
+        {% endblock %}
     </div>
-
 </body>
 </html>

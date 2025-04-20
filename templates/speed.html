@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/speed.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="speed-box">
+    <h2>Internet Speed Test</h2>
+
+    {% if message %}
+    <div class="highlight">
+        {{ message|safe }}
+    </div>
+    {% endif %}
+</div>
+
+<form method="POST">
+    <label for="isp">Select your ISP:</label>
+    <select name="isp" id="isp" required>
+        <option value="">-- Choose ISP --</option>
+        <option value="Airtel" {% if selected_isp == "Airtel" %}selected{% endif %}>Airtel</option>
+        <option value="Jio" {% if selected_isp == "Jio" %}selected{% endif %}>Jio</option>
+        <option value="BSNL" {% if selected_isp == "BSNL" %}selected{% endif %}>BSNL</option>
+        <option value="Vodafone" {% if selected_isp == "Vodafone" %}selected{% endif %}>Vodafone</option>
+    </select>
+    <button type="submit">Check ISP Speed</button>
+</form>
+{% endblock %}
