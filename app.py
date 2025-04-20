@@ -1,6 +1,10 @@
 from flask import Flask, render_template, request
 import pandas as pd
 import joblib
+import plotly.graph_objs as go
+import plotly.io as pio
+
+
 
 app = Flask(__name__)
 
@@ -51,6 +55,9 @@ def speedtest_view():
             message = "Invalid ISP selection. Please choose a valid ISP."
 
     return render_template("speed.html", message=message, best_isp=best_isp, best_isp_speed=best_isp_speed, isp_speeds=isp_speeds)
+
+
+
 
 @app.route('/recommend', methods=['GET', 'POST'])
 def recommend():
@@ -131,9 +138,14 @@ def recommend():
     return render_template("recommend.html", message=message, plans=plans, isp_speed_info=isp_speed_info,
                            selected_isp=selected_isp, recommended_isp=recommended_isp)
 
+
+
+
 @app.route('/about')
 def about():
     return render_template("about.html")
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)

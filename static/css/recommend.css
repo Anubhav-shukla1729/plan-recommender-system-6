@@ -1,9 +1,10 @@
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
+    background-color: #f9f9f9;
+    color: #333;
 }
 
 /* Container for the whole recommendation page */
@@ -30,7 +31,14 @@ body {
     background-color: #fff;
     padding: 20px;
     border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.recommend-form-container:hover,
+.isp-form-container:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
 }
 
 /* Form Styles */
@@ -46,54 +54,67 @@ body {
 
 .recommend-form .form-group label {
     font-size: 16px;
-    color: #333;
+    color: #555;
+    margin-bottom: 8px;
 }
 
 .recommend-form .form-group input,
 .recommend-form .form-group select {
-    padding: 8px;
+    padding: 10px;
     font-size: 14px;
     width: 100%;
     margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    transition: border 0.3s ease;
 }
 
+.recommend-form .form-group input:focus,
+.recommend-form .form-group select:focus {
+    border: 1px solid #4CAF50;
+    outline: none;
+}
+
+/* Buttons */
 .recommend-form button,
 .recommend-btn {
     background-color: #4CAF50;
     color: white;
-    padding: 10px;
+    padding: 12px;
     border: none;
     font-size: 16px;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
     width: 100%;
+    transition: background-color 0.3s ease;
 }
 
 .recommend-form button:hover,
 .recommend-btn:hover {
     background-color: #45a049;
+    transform: scale(1.05);
 }
 
 /* ISP and Location Block */
 .isp-location-block {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    gap: 30px;
     margin-bottom: 20px;
 }
 
 .isp-location-block > div {
-    margin-left: 20px;
-    background-color: #ffffff;
+    background-color: #fff;
     padding: 20px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 48%;
 }
 
 .isp-location-block h3 {
-    margin-bottom: 10px;
     font-size: 18px;
     color: #333;
+    margin-bottom: 10px;
 }
 
 .isp-location-block p {
@@ -104,7 +125,7 @@ body {
 .isp-message {
     margin-top: 15px;
     background-color: #f0f8ff;
-    padding: 10px;
+    padding: 12px;
     border-radius: 6px;
     font-size: 14px;
     color: #333;
@@ -142,7 +163,7 @@ body {
 }
 
 .plan-card:hover {
-    transform: scale(1.02);
+    transform: scale(1.05);
     border-color: #4CAF50;
 }
 
@@ -162,6 +183,7 @@ body {
 @media (max-width: 768px) {
     .top-section {
         flex-direction: column;
+        gap: 20px;
     }
 
     .isp-location-block {
@@ -183,3 +205,79 @@ body {
         width: 100%;
     }
 }
+
+
+
+/* Form Inputs Styling */
+.recommend-form .form-group input,
+.recommend-form .form-group select {
+    padding: 12px;
+    font-size: 14px;
+    width: 100%;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    transition: border 0.3s ease;
+    box-sizing: border-box;
+}
+
+.recommend-form .form-group input:focus,
+.recommend-form .form-group select:focus {
+    border: 1px solid #4CAF50;
+    outline: none;
+}
+
+/* Input placeholders */
+.recommend-form .form-group input::placeholder,
+.recommend-form .form-group select::placeholder {
+    color: #888;
+    font-style: italic;
+}
+
+/* Button Styling */
+.recommend-form button,
+.recommend-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px;
+    border: none;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-sizing: border-box;
+}
+
+.recommend-form button:hover,
+.recommend-btn:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Form Inputs Styling */
+.recommend-form .form-group input,
+.recommend-form .form-group select {
+    padding: 14px;
+    font-size: 16px;
+    width: 100%;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: border 0.3s ease;
+    box-sizing: border-box;
+}
+
+.recommend-form .form-group input:focus,
+.recommend-form .form-group select:focus {
+    border: 1px solid #4CAF50;
+    outline: none;
+}
+
+/* Input placeholders */
+.recommend-form .form-group input::placeholder,
+.recommend-form .form-group select::placeholder {
+    color: #888;
+    font-style: italic;
+}
+
