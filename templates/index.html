@@ -1,70 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>📱 Mobile Plan Recommender</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
-  <div class="container">
-    <h1>📱 Mobile Plan Predictor</h1>
-    <form method="POST">
-      <label>Expected Price (₹):</label>
-      <input type="number" name="price" step="0.1" placeholder="e.g. 299" />
+{% extends "base.html" %}
 
-      <label>Validity (Days):</label>
-      <input type="number" name="validity" step="1" placeholder="e.g. 28" />
+{% block content %}
+<div class="home-container">
+  <h1 class="main-title">Telecom Plan Recommender</h1>
+  <p class="lead">Find the best mobile plan tailored to your budget, data needs, and preferences.</p>
 
-      <label>Data per Day (GB):</label>
-      <input type="number" name="data" step="0.1" placeholder="e.g. 1.5" />
+  <a href="{{ url_for('recommend') }}" class="recommend-btn">Get Recommendations</a>
 
-      <label>Optional Category:</label>
-      <select name="category">
-        <option value="">-- None --</option>
-        <option value="Only Calls">Only Calls</option>
-        <option value="Calls + Data">Calls + Data</option>
-        <option value="Heavy Data">Heavy Data</option>
-        <option value="Long Term">Long Term</option>
-        <option value="Short Term">Short Term</option>
-        <option value="SMS Only">SMS Only</option>
-      </select>
-
-      <button type="submit">🔍 Recommend Best Plans</button>
-    </form>
-
-    <div class="message">{{ message }}</div>
-
-    {% if plans %}
-    <div class="plans">
-      <h2>📋 Recommended Plans</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Operator</th>
-            <th>Price (₹)</th>
-            <th>Validity</th>
-            <th>Data/Day</th>
-            <th>Calls</th>
-            <th>SMS</th>
-            <th>Class</th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for plan in plans %}
-          <tr>
-            <td>{{ plan.operator }}</td>
-            <td>{{ plan.price }}</td>
-            <td>{{ plan.validity_days }}</td>
-            <td>{{ plan.data_per_day }}</td>
-            <td>{{ "Yes" if plan.voice_calls else "No" }}</td>
-            <td>{{ plan.sms or 0 }}</td>
-            <td>{{ plan.plan_class }}</td>
-          </tr>
-          {% endfor %}
-        </tbody>
-      </table>
-    </div>
-    {% endif %}
+  <div class="info-section">
+    <h2>Why Use This Tool?</h2>
+    <ul>
+      <li>🎯 Accurate plan suggestions using machine learning</li>
+      <li>📈 Filters for price, validity, and data per day</li>
+      <li>📦 Categorized plans for easier comparison</li>
+      <li>⚡ Fast, responsive, and simple interface</li>
+    </ul>
   </div>
-</body>
-</html>
+
+  <div class="info-section">
+    <h2>How It Works</h2>
+    <p>Our XGBoost-based model predicts your ideal plan category based on your inputs, and shows the top available plans sorted by value (like price per GB).</p>
+  </div>
+
+  <p class="about-link">
+    <a href="{{ url_for('about') }}" class="btn-link">Learn more about the project →</a>
+  </p>
+</div>
+{% endblock %}

@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block content %}
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About - Telecom Plan Recommender</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+   
+
+    <!-- Page Content -->
+    <div class="container">
+        <h1 class="mb-4 text-primary">📱 About Telecom Plan Recommender</h1>
+
+        <p class="lead">
+            This intelligent web application helps users discover the best mobile recharge plans based on their budget and usage needs.
+        </p>
+
+        <h3 class="mt-5">💡 Project Overview</h3>
+        <p>
+            With numerous telecom plans available, it can be hard to find the one that fits your needs. This system simplifies the process by recommending the most suitable plans based on:
+        </p>
+        <ul>
+            <li>Price (₹)</li>
+            <li>Validity (days)</li>
+            <li>Daily Data (GB)</li>
+            <li>Preferred Plan Category (optional)</li>
+        </ul>
+
+        <h3 class="mt-5">🧠 Technology Stack</h3>
+        <ul>
+            <li><strong>Frontend:</strong> HTML, CSS, Bootstrap</li>
+            <li><strong>Backend:</strong> Python (Flask)</li>
+            <li><strong>ML Model:</strong> XGBoost Classifier</li>
+            <li><strong>Data:</strong> CSV file of real and sample recharge plans</li>
+        </ul>
+
+        <h3 class="mt-5">🔍 How It Works</h3>
+        <ol>
+            <li>User provides basic input (price, validity, etc.)</li>
+            <li>ML model predicts the suitable plan category (if not selected)</li>
+            <li>Plans are filtered and sorted by value</li>
+            <li>Top 3–4 plans are displayed as recommendations</li>
+        </ol>
+
+        <h3 class="mt-5">🎯 Key Features</h3>
+        <ul>
+            <li>No input is mandatory – minimal input gives relevant results</li>
+            <li>Category-based prediction for personalized suggestions</li>
+            <li>Intuitive UI and responsive design</li>
+            <li>Plans sorted by value (price per GB)</li>
+        </ul>
+
+        <h3 class="mt-5">📈 Future Improvements</h3>
+        <ul>
+            <li>Live API integration for real-time telecom plans</li>
+            <li>User profile memory for better long-term recommendations</li>
+            <li>Signal strength and area-wise coverage info</li>
+        </ul>
+
+        <h3 class="mt-5">👨‍💻 Developer</h3>
+        <p>
+            Built by Anubhav Shukla and Group as a telecom + ML project. <br>
+            🔗 <a href="https://github.com/Anubhav-shukla1729/plan_recommendation_prototype_small" target="_blank">View Source on GitHub</a>
+        </p>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        &copy; 2025 Telecom Plan Recommender | All rights reserved.
+    </footer>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Telecom Plan Recommender</h1>
+
+<form method="POST" class="recommend-form">
+    <div class="form-group">
+        <label for="price">Price (₹):</label>
+        <input type="number" step="0.01" name="price" id="price" placeholder="Enter max price">
+    </div>
+
+    <div class="form-group">
+        <label for="validity">Validity (days):</label>
+        <input type="number" name="validity" id="validity" placeholder="e.g. 28">
+    </div>
+
+    <div class="form-group">
+        <label for="data">Data per Day (GB):</label>
+        <input type="number" step="0.1" name="data" id="data" placeholder="e.g. 1.5">
+    </div>
+
+    <div class="form-group">
+        <label for="category">Preferred Category (optional):</label>
+        <select name="category" id="category">
+            <option value="">-- Select Category --</option>
+            <option value="Calls + Data">Calls + Data</option>
+            <option value="Heavy Data">Heavy Data</option>
+            <option value="Only Calls">Only Calls</option>
+            <option value="SMS Only">SMS Only</option>
+        </select>
+    </div>
+
+    <button type="submit" class="recommend-btn">Recommend Plans</button>
+</form>
+
+{% if message %}
+    <h2>{{ message }}</h2>
+{% endif %}
+
+{% if plans %}
+<div class="plans-container">
+    {% for plan in plans %}
+    <div class="plan-card">
+        <h3>{{ plan.operator }} - ₹{{ plan.price }}</h3>
+        <p><strong>Validity:</strong> {{ plan.validity_days }} days</p>
+        <p><strong>Data/day:</strong> {{ plan.data_per_day }} GB</p>
+        <p><strong>Voice Calls:</strong> {{ "Yes" if plan.voice_calls else "No" }}</p>
+        <p><strong>SMS:</strong> {{ plan.sms }}</p>
+        <p><strong>Category:</strong> {{ plan.plan_class }}</p>
+        <p><strong>Price/GB:</strong> ₹{{ plan.price_per_GB }}</p>
+    </div>
+    {% endfor %}
+</div>
+{% elif message %}
+    <p>No plans found matching your criteria.</p>
+{% endif %}
+{% endblock %}
