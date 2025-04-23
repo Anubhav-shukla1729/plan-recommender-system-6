@@ -15,7 +15,8 @@
     <nav>
         <ul>
             <li><a href="{{ url_for('home') }}">Home</a></li>
-            <li><a href="{{ url_for('recommend') }}">Recommend</a></li>
+            <li><a href="{{ url_for('recommend') }}">Mobile Plans</a></li>
+            <li><a href="{{ url_for('broadband') }}" class="button">Broadband Plans</a></li> <!-- Added button -->
             <li><a href="{{ url_for('about') }}">About</a></li>
         </ul>
     </nav>
@@ -24,5 +25,9 @@
         {% block content %}
         {% endblock %}
     </div>
+
+    <!-- Optional: Include a button in the footer or elsewhere if needed -->
+    <!-- <a href="{{ url_for('broadband') }}" class="button">Go to Broadband Plans</a> -->
+
 </body>
 </html>

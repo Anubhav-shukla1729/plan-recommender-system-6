@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/broadband.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Broadband Plan Recommendations</h2>
+
+    <!-- Display message -->
+    <div class="alert alert-info">{{ message }}</div>
+
+    <!-- Form for inputs -->
+    <form method="POST">
+        <label for="price">Price (₹):</label>
+        <input type="number" name="price" id="price">
+
+        <label for="validity">Validity (days):</label>
+        <input type="number" name="validity" id="validity">
+
+        <label for="speed">Speed (Mbps):</label>
+        <input type="number" name="speed" id="speed">
+
+        <label for="region">Region:</label>
+        <select name="region" id="region">
+            <option value="">Select Region</option>
+            {% for region in regions %}
+                <option value="{{ region }}">{{ region }}</option>
+            {% endfor %}
+        </select>
+
+        <button type="submit">Get Recommendations</button>
+    </form>
+
+    <!-- Display recommended plans -->
+    <div class="plans">
+        {% if plans %}
+            <h3>Recommended Plans:</h3>
+            <table class="broadband-table">
+                <thead>
+                    <tr>
+                        <th>Provider</th>
+                        <th>Plan Name</th>
+                        <th>Price (₹)</th>
+                        <th>Validity (days)</th>
+                        <th>Speed (Mbps)</th>
+                        <th>Data Cap (GB)</th>
+                        <th>OTT Benefits</th>
+                        <th>Region</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for plan in plans %}
+                        <tr>
+                            <td data-label="Provider">{{ plan['Provider'] }}</td>
+                            <td data-label="Plan Name">{{ plan['Plan Name'] }}</td>
+                            <td data-label="Price (₹)">{{ plan['Price (₹)'] }}</td>
+                            <td data-label="Validity (days)">{{ plan['Validity (days)'] }}</td>
+                            <td data-label="Speed (Mbps)">{{ plan['Speed (Mbps)'] }}</td>
+                            <td data-label="Data Cap (GB)">{{ plan['Data Cap (GB)'] }}</td>
+                            <td data-label="OTT Benefits">{{ plan['OTT Benefits'] }}</td>
+                            <td data-label="Region">{{ plan['Region'] }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+                
+            </table>
+        {% else %}
+            <p>No plans available.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

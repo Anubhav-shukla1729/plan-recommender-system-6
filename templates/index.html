@@ -5,43 +5,26 @@
 {% endblock %}
 
 {% block content %}
-<div class="home-container text-center">
-    <h1 class="main-title text-primary">Welcome to the Telecom Plan Recommender</h1>
-    <p class="lead">Find the best mobile plan tailored to your needs.</p>
+<div class="container home">
+    <h1>Welcome to the Telecom Plan Recommendation Portal</h1>
+    <p>Find the best mobile and broadband plans tailored to your needs. Whether you're looking for high-speed internet or affordable mobile data, we've got you covered!</p>
 
-    <!-- Interactive Elements -->
+    <div class="button-container">
+        <a href="{{ url_for('recommend') }}">
+            <button class="navigate-btn">📱 Mobile Plan Recommendation</button>
+        </a>
+        <a href="{{ url_for('broadband') }}">
+            <button class="navigate-btn">🌐 Broadband Plan Recommendation</button>
+        </a>
+    </div>
+
     <div class="features">
-        <div class="feature-box">
-            <h4>🔍 Plan Recommendations</h4>
-            <p>Get the best plans based on your price, data, and validity preferences.</p>
-        </div>
-        <div class="feature-box">
-            <h4>📶 Network Speed Check</h4>
-            <p>Test your internet speed and get recommendations on the best ISPs for you.</p>
-        </div>
-        <div class="feature-box">
-            <h4>📊 Machine Learning Predictions</h4>
-            <p>Leverage AI to predict and recommend the most suitable telecom plans for you.</p>
-        </div>
-    </div>
-
-    <!-- Call-to-action -->
-    <a class="btn btn-primary" href="{{ url_for('recommend') }}">Get Started</a>
-
-    <!-- Fun Fact / Testimonial Section -->
-    <div class="testimonial mt-5">
-        <p><em>"This app saved me hours of searching! I now have the best plan for my usage, and I know my internet is fast enough!"</em></p>
-        <p><strong>- Happy User</strong></p>
-    </div>
-
-    <!-- Information on the App -->
-    <div class="app-info mt-5">
-        <h3>Why Choose Our App?</h3>
-        <p>
-            The Telecom Plan Recommender simplifies the process of selecting the perfect telecom plan for your budget and usage needs. 
-            Whether you care about price, data, or validity, we've got you covered with machine learning-driven suggestions.
-        </p>
+        <h2>Why use this portal?</h2>
+        <ul>
+            <li>🔍 Search plans by price, speed, validity, and more</li>
+            <li>📊 Compare top providers in your region</li>
+            <li>✅ Make informed choices with our recommendation engine</li>
+        </ul>
     </div>
 </div>
-
 {% endblock %}
