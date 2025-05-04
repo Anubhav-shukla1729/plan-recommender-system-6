@@ -57,3 +57,11 @@ It is built using a **Flask** backend, a **Bootstrap**-powered responsive fronte
    ```bash
    git clone https://github.com/Anubhav-shukla1729/plan-recommender-system-6.git
    cd plan-recommender-system-6
+2. **Install dependecies
+   ```bash
+   pip install -r requirements.txt
+3. **Run Flask app
+   ```bash
+   python app.py
+4.**Open app on localhost
+  Open http://localhost:5000 in your browser.
